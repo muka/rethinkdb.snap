@@ -20,11 +20,12 @@ parts:
       - libprotobuf-dev
       - libssl-dev
       - libcurl4-openssl-dev
+      - curl
+      - libcurl3
       - libboost-all-dev
       - libncurses5-dev
       - libjemalloc-dev
       - wget
       - m4
       - libboost-dev
-      - libjemalloc-dev
       - linux-headers-generic
