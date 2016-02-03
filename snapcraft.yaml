@@ -13,10 +13,9 @@ parts:
       - --allow-fetch
       - --fetch protoc
     source: https://download.rethinkdb.com/dist/rethinkdb-2.2.4.tgz
-    stage-packages:
+    build-packages:
       - build-essential
       - protobuf-compiler
-      # - python
       - libprotobuf-dev
       - libssl-dev
       - openssl
