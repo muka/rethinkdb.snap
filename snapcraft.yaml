@@ -11,16 +11,20 @@ parts:
     plugin: autotools
     configflags:
       - --allow-fetch
-      - --fetch protoc 
+      - --fetch protoc
     source: https://download.rethinkdb.com/dist/rethinkdb-2.2.4.tgz
     stage-packages:
       - build-essential
       - protobuf-compiler
       - python
       - libprotobuf-dev
+      - libssl-dev
       - libcurl4-openssl-dev
       - libboost-all-dev
       - libncurses5-dev
       - libjemalloc-dev
       - wget
       - m4
+      - libboost-dev
+      - libjemalloc-dev
+      - linux-headers-generic
