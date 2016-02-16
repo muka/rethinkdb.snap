@@ -1,6 +1,5 @@
 name: rethinkdb
 version: 2.2.4
-vendor: Luca Capra <lcapra@create-net.org>
 summary: The open-source database for the realtime web
 description: RethinkDB is the open-source, scalable database that makes building realtime apps dramatically easier.
 icon: logo.png
@@ -14,15 +13,14 @@ parts:
       - --fetch protoc
     source: https://download.rethinkdb.com/dist/rethinkdb-2.2.4.tgz
     build-packages:
+
       - build-essential
       - protobuf-compiler
+      - python
       - libprotobuf-dev
-      - libssl-dev
-      - openssl
+      - libcurl4-openssl-dev
       - libboost-all-dev
       - libncurses5-dev
       - libjemalloc-dev
       - wget
       - m4
-      - libboost-dev
-      - linux-headers-generic
