@@ -4,8 +4,21 @@ summary: The open-source database for the realtime web
 description: RethinkDB is the open-source, scalable database that makes building realtime apps dramatically easier.
 icon: logo.png
 
-parts:
+apps:
+ rethinkdb:
+   command: bin/launch
+   daemon: simple
+   uses: [listener]
 
+uses:
+  listener:
+    type: migration-skill
+    caps:
+     - network-client
+     - network-listener
+     - network-service
+
+parts:
   rethinkdb:
     plugin: autotools
     configflags:
@@ -13,7 +26,6 @@ parts:
       - --fetch protoc
     source: https://download.rethinkdb.com/dist/rethinkdb-2.2.4.tgz
     build-packages:
-
       - build-essential
       - protobuf-compiler
       - python
@@ -24,3 +36,8 @@ parts:
       - libjemalloc-dev
       - wget
       - m4
+  launcher:
+    plugin: copy
+    files:
+      launch.sh: bin/launch
+      default.conf: config/default.conf
